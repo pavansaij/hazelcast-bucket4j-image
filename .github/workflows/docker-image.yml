@@ -21,9 +21,7 @@ jobs:
       run: |
         docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
     - name: Build the Docker image
-      env:
-        TAG_NAME: $(date +%s)
-      run: docker build . --file Docker/Dockerfile --tag ${{secrets.DOCKER_USER}}/hazelcast-bucket4j:$TAG_NAME
+      run: docker build . --file Docker/Dockerfile --tag ${{secrets.DOCKER_USER}}/hazelcast-bucket4j:20211031
     
     - name: Docker push
-      run: docker push ${{secrets.DOCKER_USER}}/hazelcast-bucket4j:$TAG_NAME
+      run: docker push ${{secrets.DOCKER_USER}}/hazelcast-bucket4j:20211031
