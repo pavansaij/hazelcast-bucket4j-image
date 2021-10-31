@@ -23,9 +23,6 @@ ENV CLASSPATH $HZ_LIB
 
 WORKDIR $HZ_HOME
 
-# Add your custom hazelcast.xml
-ADD hazelcast.xml $HZ_HOME
-
 # Run hazelcast
 CMD ./server.sh
 EXPOSE 5701
