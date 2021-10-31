@@ -9,6 +9,8 @@ ENV HZ_LIB $HZ_HOME/lib
 RUN mkdir -p $HZ_LIB
 WORKDIR $HZ_LIB
 
+RUN echo $HZ_LIB
+
 # Download jcache and bucket4j jars from maven repo.
 ADD https://repo1.maven.org/maven2/com/hazelcast/hazelcast-all/$HZ_VERSION/hazelcast-all-$HZ_VERSION.jar $HZ_LIB
 ADD https://repo1.maven.org/maven2/javax/cache/cache-api/$JCACHE_VERSION/cache-api-$JCACHE_VERSION.jar $HZ_LIB
